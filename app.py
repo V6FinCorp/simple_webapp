@@ -1,17 +1,12 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask
 import os
 
-app = Flask(__name__, static_folder='static', template_folder='templates')
+app = Flask(__name__)
 
 
 @app.route('/')
 def index():
-    return render_template('index.html')
-
-
-@app.route('/api/health')
-def health():
-    return jsonify(status='ok')
+    return 'Hello, world!'
 
 
 if __name__ == '__main__':
